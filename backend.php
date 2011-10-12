@@ -11,7 +11,7 @@ if(isset($_POST["system"]) && isset($_POST["passwd"])) {
   $passwd = $_POST["passwd"];
 }
 if($system != null && $passwd != null) {
-  require_once(getenv("HOME") . "/phpcassa.php");
+  require_once("/home/frozen/phpcassa.php");
   $conn = cassandra_connect("fo");
   // $sub = new ColumnFamily(cassandra_connect("fo"), "subscriptions");
   $sys = new ColumnFamily($conn, "sys");
