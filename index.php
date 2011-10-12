@@ -27,7 +27,7 @@
 
 <div id="middle">
   <div class="inner">
-    <noscript><p>Javascript is required in the Client Area</p></noscript>
+    <noscript>Javascript is required in the Client Area</noscript>
     <div class="login">
       <form id="login" action="/login.php">
       <h2>Login</h2>

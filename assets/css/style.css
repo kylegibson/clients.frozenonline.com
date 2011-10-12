@@ -1,68 +1,16 @@
 .login {
-width:30em;
-}
-
-#bottom .inner {
-color:#CCC;
-padding-bottom:2em;
-padding-top:1em;
-}
-
-#bottom .legal {
-border-bottom:1px solid #111;
-border-top:1px solid #111;
-color:#222;
-font-size:.7em;
-padding-bottom:.5em;
-padding-top:.5em;
-}
-
-#bottom .menu {
-float:left;
-list-style:none;
-margin-right:3em;
-padding:0;
-width:16em;
-}
-
-#bottom .menu li {
-border-bottom:1px dashed #111;
-padding-bottom:.5em;
-padding-left:.5em;
-padding-top:.5em;
-}
-
-#bottom .misc {
-border-left:1px solid #111;
-float:right;
-margin-right:3em;
-margin-top:1em;
-padding-left:1em;
-width:17em;
-}
-
-#bottom h3 {
-color:#333;
-font-size:.8em;
-}
-
-#leftside {
-float:left;
 width:20em;
+background-color:#EEE;
+-moz-border-radius:1em;
+border-radius:1em;
+padding-left:1em;
 }
 
-#leftside li {
-padding:.3em;
-}
-
-#leftside ul {
-padding-right:1em;
-}
 
 #middle {
 background-color:#FFF;
-padding-bottom:3em;
-padding-top:1em;
+padding-bottom:2em;
+padding-top:2em;
 }
 
 #middle .bottom h1 {
@@ -79,35 +27,6 @@ background-color:#CCC;
 height:70px;
 padding:1em;
 text-align:center;
-}
-
-#payment li {
-text-align:center;
-}
-
-#rightside {
-float:right;
-width:37em;
-}
-
-#rightside table {
-border:0;
-border-collapse:collapse;
-width:100%;
-}
-
-#rightside td {
-padding:.5em;
-text-align:left;
-}
-
-#rightside th {
-padding:.5em .5em .5em .7em;
-text-align:left;
-}
-
-#rightside thead {
-background-color:#EEE;
 }
 
 #top {
@@ -144,11 +63,6 @@ margin-right:1em;
 
 #webhost_stuff {
 height:110px;
-}
-
-#webhost_stuff table {
-float:right;
-padding-right:.5em;
 }
 
 .inner {
@@ -194,5 +108,5 @@ float:left;
 font-weight:700;
 margin-right:.5em;
 text-align:right;
-width:7em;
+width:6em;
 }
