@@ -1,4 +1,12 @@
-<noscript>Javascript is required in the Client Area</noscript>
+<?
+if(!isset($page))
+  header("Location: /");
+  exit;
+}
+?>
+<noscript>
+<p>Javascript is required in the Client Area</p>
+</noscript>
 <div class="login">
   <h2>Login</h2>
   <form id="login" action="/login.php" method="post">
@@ -7,8 +15,8 @@
     <input type="text" id="system" name="system" class="system"/>
   </div>
   <div>
-    <label for="pwd">Password</label> 
-    <input type="password" id="pwd" name="pwd" class="pwd"/>
+    <label for="passwd">Password</label> 
+    <input type="password" id="passwd" name="passwd" class="passwd"/>
   </div>
   <div>
     <label class="result"><span>&nbsp;</span></label>
