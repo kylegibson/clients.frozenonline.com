@@ -6,7 +6,7 @@ if(isset($_SESSION["system"]) && isset($_SESSION["pwd"])) {
   $system = $_SESSION["system"];
   $passwd = $_SESSION["passwd"];
 }
-if(isset($_POST["system"]) && isset($_POST["pwd"])) {
+if(isset($_POST["system"]) && isset($_POST["passwd"])) {
   $system = strtolower($_POST["system"]);
   $passwd = $_POST["passwd"];
 }
