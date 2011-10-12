@@ -13,7 +13,7 @@
 <div id="top">
 <div class="inner">
 <div class="logo">
-<img src="/assets/images/logo.png" alt="frozenonline" />
+<img src="http://frozenonline.com/assets/images/logo.png" alt="frozenonline" />
 </div>
 <div class="rightside">
 <div class="menu">
