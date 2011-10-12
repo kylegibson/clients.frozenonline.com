@@ -7,8 +7,8 @@ if(isset($_SESSION["system"]) && isset($_SESSION["pwd"])) {
   $passwd = $_SESSION["passwd"];
 }
 if(isset($_POST["system"]) && isset($_POST["passwd"])) {
-  $system = strtolower($_POST["system"]);
-  $passwd = $_POST["passwd"];
+  $system = strtolower(trim($_POST["system"]));
+  $passwd = trim($_POST["passwd"]);
 }
 if($system != null && $passwd != null) {
   require_once("/home/frozen/phpcassa.php");
@@ -22,6 +22,7 @@ if($system != null && $passwd != null) {
       $_SESSION["system"] = $system;
       $_SESSION["passwd"] = $passwd;
       unset($error);
+      $page = "views/account_summary.php";
     }
   } catch (Exception $e) { }
 }
