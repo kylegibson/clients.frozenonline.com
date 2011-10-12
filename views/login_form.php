@@ -9,6 +9,7 @@ if(!isset($page)) {
 </noscript>
 <div class="login">
   <h2>Login</h2>
+  <? if(isset($error)) { echo "<p class='error'>$error</p>"; } ?>
   <form id="login" action="/" method="post">
   <div>
     <label for="system">System Name</label> 

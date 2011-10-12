@@ -22,6 +22,7 @@ if($system != null && $passwd != null) {
         && hash("sha256", ".:$system.$passwd:.") == $r["slogin_www"]) {
       $_SESSION["system"] = $system;
       $_SESSION["passwd"] = $passwd;
+      unset($error);
     }
   } catch (Exception $e) { }
 }
