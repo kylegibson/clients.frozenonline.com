@@ -12,11 +12,10 @@ if(isset($_POST["system"]) && isset($_POST["passwd"])) {
 }
 if($system != null && $passwd != null) {
   require_once("/home/frozen/phpcassa.php");
-  $conn = cassandra_connect("fo");
-  // $sub = new ColumnFamily(cassandra_connect("fo"), "subscriptions");
-  $sys = new ColumnFamily($conn, "sys");
   $error = "Login failed. User does not exist or incorrect password.";
   try {
+    $conn = cassandra_connect(KS_FO);
+    $sys = new ColumnFamily($conn, CF_SYSTEMS);
     $system_info = $r = $sys->get($system);
     if($r["status"] == "assigned" && $r["subscription"] != ""
         && hash("sha256", ".:$system.$passwd:.") == $r["slogin_www"]) {
