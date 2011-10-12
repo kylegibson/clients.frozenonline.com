@@ -9,7 +9,7 @@ if(!isset($page)) {
 </noscript>
 <div class="login">
   <h2>Login</h2>
-  <form id="login" action="/login.php" method="post">
+  <form id="login" action="/" method="post">
   <div>
     <label for="system">System Name</label> 
     <input type="text" id="system" name="system" class="system"/>
