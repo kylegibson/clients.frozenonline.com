@@ -1,5 +1,5 @@
 <?
-if(!isset($page))
+if(!isset($page)) {
   header("Location: /");
   exit;
 }
