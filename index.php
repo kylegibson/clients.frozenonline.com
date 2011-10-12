@@ -25,7 +25,25 @@
 </div>
 </div>
 
+<div id="middle">
+<div class="inner login">
+<noscript><p>Javascript is required in the Client Area</p></noscript>
+<form id="login" action="/login.php">
+<h2>Login</h2>
 <div>
+<label for="system">System Name</label> 
+<input type="text" id="system" name="system" class="system"/>
+</div>
+<div>
+<label for="pwd">Password</label> 
+<input type="password" id="pwd" name="pwd" class="pwd"/>
+</div>
+<div>
+<label class="result"><span>&nbsp;</span></label>
+<input type="submit" value="Login" class='submit'/>
+</div>
+</form>
+</div>
 </div>
 
 </body>
