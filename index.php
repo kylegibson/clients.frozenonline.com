@@ -29,8 +29,8 @@
   <div class="inner">
     <noscript>Javascript is required in the Client Area</noscript>
     <div class="login">
-      <form id="login" action="/login.php">
       <h2>Login</h2>
+      <form id="login" action="/login.php">
       <div>
         <label for="system">System Name</label> 
         <input type="text" id="system" name="system" class="system"/>

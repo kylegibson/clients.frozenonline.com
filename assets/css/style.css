@@ -4,6 +4,11 @@ background-color:#EEE;
 -moz-border-radius:1em;
 border-radius:1em;
 padding-left:1em;
+margin:0 auto;
+}
+
+.login h1 {
+padding-top:0.2em;
 }
 
 
@@ -61,10 +66,6 @@ float:left;
 margin-right:1em;
 }
 
-#webhost_stuff {
-height:110px;
-}
-
 .inner {
 clear:both;
 margin-left:auto;
@@ -108,5 +109,5 @@ float:left;
 font-weight:700;
 margin-right:.5em;
 text-align:right;
-width:6em;
+width:8em;
 }
