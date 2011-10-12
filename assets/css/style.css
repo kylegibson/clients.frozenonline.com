@@ -5,12 +5,14 @@ background-color:#EEE;
 border-radius:1em;
 padding-left:1em;
 margin:0 auto;
+padding-bottom:0.4em;
+padding-left:1em;
+padding-right:1em;
 }
 
 .login h2 {
 padding-top:0.2em;
 }
-
 
 #middle {
 background-color:#FFF;
