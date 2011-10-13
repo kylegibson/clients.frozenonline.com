@@ -63,7 +63,16 @@ if($system != null && $passwd != null) {
 }
 if($logged_in) {
   if($request == "reboot") { // Ajax callback
-    echo "Reboot is in progress";
+    if($system_info["flag_allow_web_reset"] == 0) {
+      echo "That system cannot be reset from the web";
+    } else {
+      try {
+        $sys->insert($system, array("control" => "reset"));
+        echo "Reboot is in progress";
+      } catch (Exception $e) { 
+        echo "An error occured";
+      }
+    }
     exit;
   }
   $menu[] = "Summary:/f/summary";
