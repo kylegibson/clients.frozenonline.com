@@ -16,8 +16,8 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/backend.php");
 
 <?include_once($_SERVER["DOCUMENT_ROOT"]."/".$header);?>
 
-<div id="middle">
-<div class="inner">
+<div id="content">
+<div id="content_container">
 <?include_once($_SERVER["DOCUMENT_ROOT"]."/".$page);?>
 </div>
 </div>

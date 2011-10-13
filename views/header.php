@@ -1,5 +1,5 @@
 <div id="top">
-  <div class="inner">
+  <div id="top_container">
     <div class="logo">
       <img src="http://frozenonline.com/assets/images/logo.png" alt="frozenonline" />
     </div>
