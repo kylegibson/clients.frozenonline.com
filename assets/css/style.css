@@ -1,30 +1,3 @@
-.error {
-color:red;
-}
-
-.box {
-background-color:#EEE;
--moz-border-radius:1em;
-border-radius:1em;
-padding-left:1em;
-margin:0 auto;
-padding-bottom:0.4em;
-padding-left:1em;
-padding-right:1em;
-}
-
-.summary {
-width:40em;
-}
-
-.login {
-width:20em;
-}
-
-.login h2 {
-padding-top:0.2em;
-}
-
 #middle {
 background-color:#FFF;
 padding-bottom:2em;
@@ -79,6 +52,24 @@ float:left;
 margin-right:1em;
 }
 
+.box {
+-moz-border-radius:1em;
+background-color:#EEE;
+border-radius:1em;
+margin:0 auto;
+padding-bottom:.4em;
+padding-left:1em;
+padding-right:1em;
+}
+
+.box h2 {
+padding-top:.3em;
+}
+
+.error {
+color:red;
+}
+
 .inner {
 clear:both;
 margin-left:auto;
@@ -87,11 +78,19 @@ overflow:hidden;
 width:60em;
 }
 
+.login {
+width:20em;
+}
+
 .notice {
 color:#666;
 font-size:.8em;
 font-style:italic;
 text-align:center;
+}
+
+.summary {
+width:40em;
 }
 
 a:hover {
