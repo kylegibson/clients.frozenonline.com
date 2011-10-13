@@ -1,6 +1,5 @@
 <?
 function require_helper($helper) {
-  global ROOT;
   require_once(ROOT."/helpers/".$helper.".php");
 }
 
