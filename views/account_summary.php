@@ -44,9 +44,23 @@ $card = array(
   "Time Remaining" => $time_remaining,
 );
 ?>
+<script type="text/javascript">
+$(function() {
+  $("reboot input").click(function() {
+    /* $("reboot input[value=Reboot]").hide(); */
+    $("reboot are-you-sure").show();
+  });
+});
+</script>
 <div class="box summary">
   <div class="inner">
     <h2>Account Summary</h2>
+    <div class="reboot right">
+      <div class="hidden are-you-sure">
+        <span>Are you sure you want to reboot?</span> 
+      </div>
+      <input type="button" value="Reboot"/>
+    </div>
     <? foreach($card as $dt => $dd): ?>
     <dl><dt><?=$dt?></dt><dd><?=$dd?></dd></dl>
     <? endforeach;?>
