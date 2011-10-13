@@ -8,7 +8,7 @@
         <ul>
 <?foreach($menu as $item){
   list($entry, $url) = explode(":", $item); 
-  echo "<li><a href=\"$url\">$item</a></li>";
+  echo "<li><a href=\"$url\">$entry</a></li>";
 }?>
         </ul>
       </div>
