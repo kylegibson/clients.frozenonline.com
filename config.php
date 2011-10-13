@@ -1,4 +1,9 @@
 <?
+function require_helper($helper) {
+  global ROOT;
+  require_once(ROOT."/helpers/".$helper.".php");
+}
+
 $logged_in = false;
 $header = "views/header.php";
 $reboot_url = "/f/reboot";
@@ -15,7 +20,4 @@ $titles = array(
 "summary" => "Account Summary",
 );
 
-function require_helper($helper) {
-  require_once(ROOT."/".$helper.".php");
-}
 ?>
