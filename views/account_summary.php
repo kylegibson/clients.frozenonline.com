@@ -22,9 +22,9 @@ if ($expire_delta > 0) {
     $time_remaining .= "$days days, ";
   if($hours > 1) 
     $time_remaining .= "$hours hours";
-  elseif($hours == 1) 
+  elseif($days < 0 && $hours == 1) 
     $time_remaining .= "less than 2 hours";
-  else 
+  elseif($days < 0) 
     $time_remaining .= "less than 1 hour";
 } else {
   $time_remaining = "no time left";
