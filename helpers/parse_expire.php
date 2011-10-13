@@ -7,7 +7,7 @@ function parse_expire($expire) {
 function format_expire($expire_secs) {
   $t = date_default_timezone_get();
   date_default_timezone_set("UTC");
-  $e = date("Y-m-d H:i e", $expire_sec);
+  $e = date("Y-m-d H:i e", $expire_secs);
   date_default_timezone_set($t);
   return $e;
 }
