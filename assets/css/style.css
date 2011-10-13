@@ -124,6 +124,10 @@ text-align:right;
 width:8em;
 }
 
+dl {
+margin:0;
+}
+
 dl dt {
 color:#999;
 float:left;
