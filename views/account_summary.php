@@ -60,6 +60,9 @@ $(function() {
   $(".reboot input[value=Yes]").click(function() {
     confirm_d.fadeOut();
     in_progress.fadeIn();
+    $.get('<?=$reboot_url?>', function(data) {
+      in_progress.text(data);
+    });
   });
 });
 </script>
@@ -68,7 +71,7 @@ $(function() {
     <h2>Account Summary</h2>
     <div class="reboot right">
       <input type="button" value="Reboot"/>
-      <div class="hidden in-progress">Reboot is in progress</div>
+      <div class="hidden in-progress">Submitting reboot request</div>
       <div class="hidden are-you-sure">
         <div>Are you sure you want to reboot?</div> 
         <div class='right'>

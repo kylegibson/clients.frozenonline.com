@@ -1,5 +1,6 @@
 <?
 $request = basename($_SERVER["REQUEST_URI"]);
+$reboot_url = "/f/reboot";
 
 if($request == "logout") {
   $_SESSION = array();
@@ -61,6 +62,10 @@ if($system != null && $passwd != null) {
   } catch (Exception $e) { }
 }
 if($logged_in) {
+  if($request == "reboot") { // Ajax callback
+    echo "Reboot is in progress";
+    exit;
+  }
   $menu[] = "Summary:/f/summary";
   $menu[] = "Logout:/f/logout";
   $page = isset($pages[$request]) ? $pages[$request] : $pages["summary"];

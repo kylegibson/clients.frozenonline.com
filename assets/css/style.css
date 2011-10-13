@@ -6,6 +6,10 @@ float:right;
 display:none;
 }
 
+.reboot {
+text-align:right;
+}
+
 #content {
 background-color:#FFF;
 padding-bottom:2em;
