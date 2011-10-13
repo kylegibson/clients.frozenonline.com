@@ -7,7 +7,7 @@ $system = $_SESSION["system"];
 $passwd = $_SESSION["passwd"];
 $card = array(
   "System" => $system,
-  "Memory" => $systems_info["memory"],
+  "Memory" => $system_info["memory"],
   "CPU Cores" => $system_info["cpu_cores"],
   "VNC Port" => $system_info["vncport_external"],
 );

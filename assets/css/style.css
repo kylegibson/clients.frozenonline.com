@@ -123,3 +123,14 @@ margin-right:.5em;
 text-align:right;
 width:8em;
 }
+
+dl dt {
+color:#999;
+float:left;
+margin:0;
+width:10em;
+}
+
+dl dd {
+margin:0;
+}
