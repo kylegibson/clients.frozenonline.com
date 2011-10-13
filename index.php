@@ -8,30 +8,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/backend.php");
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
-<title>FrozenOnline - Client Area</title>
+<title>FrozenOnline - Client Area - <?=$title?></title>
 <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 <script src="/assets/js/jquery-1.6.2.min.js" type="text/javascript"> </script>
 </head>
 <body>
 
-<div id="top">
-<div class="inner">
-<div class="logo">
-<img src="http://frozenonline.com/assets/images/logo.png" alt="frozenonline" />
-</div>
-<div class="rightside">
-<div class="menu">
-<ul>
-<li><a href="/">Home</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+<?include_once($_SERVER["DOCUMENT_ROOT"]."/".$header);?>
 
 <div id="middle">
 <div class="inner">
-<?include_once($page);?>
+<?include_once($_SERVER["DOCUMENT_ROOT"]."/".$page);?>
 </div>
 </div>
 

@@ -7,7 +7,7 @@ if(!isset($page)) {
 <noscript>
 <p>Javascript is required in the Client Area</p>
 </noscript>
-<div class="login">
+<div class="box login">
   <h2>Login</h2>
   <? if(isset($error)) { echo "<p class='error'>$error</p>"; } ?>
   <form id="login" action="/" method="post">

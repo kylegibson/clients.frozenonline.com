@@ -1,9 +1,8 @@
 .error {
-  color:red;
+color:red;
 }
 
-.login {
-width:20em;
+.box {
 background-color:#EEE;
 -moz-border-radius:1em;
 border-radius:1em;
@@ -12,6 +11,14 @@ margin:0 auto;
 padding-bottom:0.4em;
 padding-left:1em;
 padding-right:1em;
+}
+
+.summary {
+width:40em;
+}
+
+.login {
+width:20em;
 }
 
 .login h2 {

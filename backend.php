@@ -1,7 +1,35 @@
 <?
-$page = "views/login_form.php";
-$system = null;
-$passwd = null;
+$request = basename($_SERVER["REQUEST_URI"]);
+
+if($request == "logout") {
+  $_SESSION = array();
+  if (ini_get("session.use_cookies")) {
+      $params = session_get_cookie_params();
+      setcookie(session_name(), '', time() - 42000,
+          $params["path"], $params["domain"],
+          $params["secure"], $params["httponly"]
+      );
+  }
+  session_destroy();
+  header("Location: /");
+  exit;
+}
+
+$pages = array(
+"login" => "views/login_form.php",
+"summary" => "views/account_summary.php",
+);
+
+$titles = array(
+"login" => "Login",
+"summary" => "Account Summary",
+);
+
+$page = $pages["login"];
+$title = $titles["login"];
+$header = "views/header.php";
+
+$system = $passwd = null;
 $k_system = "system";
 $k_passwd = "passwd";
 if(isset($_SESSION[$k_system]) && isset($_SESSION[$k_passwd])) {
@@ -12,6 +40,8 @@ if(isset($_POST[$k_system]) && isset($_POST[$k_passwd])) {
   $system = strtolower(trim($_POST[$k_system]));
   $passwd = trim($_POST[$k_passwd]);
 }
+$logged_in = false;
+$menu = array("Home:/");
 if($system != null && $passwd != null) {
   require_once("/home/frozen/phpcassa.php");
   $error = "Login failed. User does not exist or incorrect password.";
@@ -24,8 +54,14 @@ if($system != null && $passwd != null) {
       $_SESSION[$k_system] = $system;
       $_SESSION[$k_passwd] = $passwd;
       unset($error);
-      $page = "views/account_summary.php";
+      $logged_in = true;
     }
   } catch (Exception $e) { }
+}
+if($logged_in) {
+  $menu[] = "Summary:/f/summary";
+  $menu[] = "Logout:/f/logout";
+  $page = isset($pages[$request]) ? $pages[$request] : $pages["summary"];
+  $title = isset($titles[$request]) ? $title[$request] : $titles["summary"];
 }
 ?>
