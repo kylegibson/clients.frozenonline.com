@@ -46,9 +46,9 @@ $card = array(
 ?>
 <script type="text/javascript">
 $(function() {
-  $("reboot input").click(function() {
+  $(".reboot input").click(function() {
     /* $("reboot input[value=Reboot]").hide(); */
-    $("reboot are-you-sure").show();
+    $(".reboot .are-you-sure").show();
   });
 });
 </script>
