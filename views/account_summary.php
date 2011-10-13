@@ -67,6 +67,7 @@ $(function() {
   <div class="inner">
     <h2>Account Summary</h2>
     <div class="reboot right">
+      <input type="button" value="Reboot"/>
       <div class="hidden in-progress">Reboot is in progress</div>
       <div class="hidden are-you-sure">
         <div>Are you sure you want to reboot?</div> 
@@ -75,7 +76,6 @@ $(function() {
             <input type="button" value="No"/>
         </div>
       </div>
-      <input type="button" value="Reboot"/>
     </div>
     <? foreach($card as $dt => $dd): ?>
     <dl><dt><?=$dt?></dt><dd><?=$dd?></dd></dl>
