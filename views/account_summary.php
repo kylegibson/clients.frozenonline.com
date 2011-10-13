@@ -9,6 +9,7 @@ $passwd = $_SESSION["passwd"];
 if(substr($system_info["subscription"], 0, 2) == "S-") {
   $expiration = "Paypal Subscription";
   $time_remaining = "N/A";
+  $expire_delta = 1;
 } else {
   $expire_sec = parse_expire($sub_info["expire"]);
   $expiration = format_expire($expire_sec);
