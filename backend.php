@@ -60,6 +60,6 @@ if($logged_in) {
   $menu[] = "Logout:/f/logout";
   $page = isset($pages[$request]) ? $pages[$request] : $pages["summary"];
   $title = isset($titles[$request]) ? $titles[$request] : $titles["summary"];
-  require_once(ROOT."/helpers/parse_expire.php");
+  require_helper("parse_expire");
 }
 ?>
