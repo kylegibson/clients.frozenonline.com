@@ -6,7 +6,7 @@ if(!(isset($page) && isset($_SESSION["system"]) && isset($_SESSION["passwd"]))) 
 $system = $_SESSION["system"];
 $passwd = $_SESSION["passwd"];
 
-if(substr($sub, 0, 2) == "S-") {
+if(substr($system["subscription"], 0, 2) == "S-") {
   $expiration = "Paypal Subscription";
   $time_remaining = "N/A";
 } else {
