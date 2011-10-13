@@ -46,9 +46,20 @@ $card = array(
 ?>
 <script type="text/javascript">
 $(function() {
-  $(".reboot input").click(function() {
-    /* $("reboot input[value=Reboot]").hide(); */
-    $(".reboot .are-you-sure").show();
+  var i_reboot = $(".reboot input[value=Reboot]");
+  var confirm_d = $(".reboot .are-you-sure");
+  var in_progress = $(".reboot .in-progress");
+  i_reboot.click(function() {
+    i_reboot.fadeOut();
+    confirm_d.fadeIn();
+  });
+  $(".reboot input[value=No]").click(function() {
+    confirm_d.fadeOut();
+    i_reboot.fadeIn();
+  });
+  $(".reboot input[value=Yes]").click(function() {
+    confirm_d.fadeOut();
+    in_progress.fadeIn();
   });
 });
 </script>
@@ -56,8 +67,13 @@ $(function() {
   <div class="inner">
     <h2>Account Summary</h2>
     <div class="reboot right">
+      <div class="hidden in-progress">Reboot is in progress</div>
       <div class="hidden are-you-sure">
-        <span>Are you sure you want to reboot?</span> 
+        <div>Are you sure you want to reboot?</div> 
+        <div class='right'>
+            <input type="button" value="Yes"/>
+            <input type="button" value="No"/>
+        </div>
       </div>
       <input type="button" value="Reboot"/>
     </div>
