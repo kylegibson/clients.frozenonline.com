@@ -13,8 +13,10 @@ $card = array(
 );
 ?>
 <div class="box summary">
-  <h2>Account Summary</h2>
-  <? foreach($card as $dt => $dd): ?>
-  <dl><dt><?=$dt?></dt><dd><?=$dd?></dd></dl>
-  <? endforeach;?>
+  <div class="inner">
+    <h2>Account Summary</h2>
+    <? foreach($card as $dt => $dd): ?>
+    <dl><dt><?=$dt?></dt><dd><?=$dd?></dd></dl>
+    <? endforeach;?>
+  </div>
 </div>
