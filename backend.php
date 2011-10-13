@@ -56,9 +56,7 @@ if($system != null && $passwd != null) {
       unset($error);
       $logged_in = true;
       $sub = new ColumnFamily($conn, CF_SUBSCRIPTIONS);
-      $sub_info = array();
-      if($system_info["subscription"])
-        $sub_info = $sub->get($system_info["subscription"])
+      $sub_info = $sub->get($system_info["subscription"])
     }
   } catch (Exception $e) { }
 }
