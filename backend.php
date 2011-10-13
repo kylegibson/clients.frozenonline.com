@@ -62,6 +62,6 @@ if($logged_in) {
   $menu[] = "Summary:/f/summary";
   $menu[] = "Logout:/f/logout";
   $page = isset($pages[$request]) ? $pages[$request] : $pages["summary"];
-  $title = isset($titles[$request]) ? $title[$request] : $titles["summary"];
+  $title = isset($titles[$request]) ? $titles[$request] : $titles["summary"];
 }
 ?>
