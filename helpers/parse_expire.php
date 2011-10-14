@@ -18,7 +18,7 @@ function expire_time_remaining($expire_delta) {
     $days = intval($expire_delta / 86400);
     $hours = intval(($expire_delta % 86400) / 3600);
     if($days > 0) 
-      $time_remaining[] = "$days days, ";
+      $time_remaining[] = "$days days";
     if($hours > 1) 
       $time_remaining[] = "$hours hours";
     elseif($days < 0 && $hours == 1) 
