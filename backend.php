@@ -59,7 +59,7 @@ if($logged_in) {
   if($request == "xfer") {
     ob_start('ob_gzhandler');
     require_helper("bandwidth");
-    $monthly_dates = get_date_span("2011-01", date("Y-m"), "monthly");
+    $monthly_dates = get_date_span(strtotime("2011-01"), time(), "monthly");
     $monthly = get_xfer_metrics($system, $monthly_dates, "monthly");
     echo json_encode(array("columns" => $monthly_dates, "data" => $monthly));
     exit;
