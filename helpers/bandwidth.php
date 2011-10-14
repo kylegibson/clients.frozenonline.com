@@ -1,5 +1,4 @@
 <?
-
 function get_date_format($period) {
   $formats = array(
     "monthly"  => "Y-m",
@@ -59,7 +58,4 @@ function get_xfer_metrics($system, $dates, $date_step) {
   }
   return $totals;
 }
-
-
-
 ?>
