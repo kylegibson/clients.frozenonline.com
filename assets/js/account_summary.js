@@ -6,7 +6,8 @@ $(function() {
     var ticks = [];
 
     var c = 1;
-    for(var date in json.columns) {
+    for(var i in json.columns) {
+      var date = json.columns[i];
       ticks.push([c, date]);
       rx_bytes.push([c, json.data.rx_bytes[date]]);
       tx_bytes.push([c, json.data.tx_bytes[date]]);
