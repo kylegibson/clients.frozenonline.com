@@ -8,8 +8,8 @@ $(function() {
     var c = 1;
     for(var date in json.columns) {
       ticks.push([c, date]);
-      rx_bytes([c, json.data.rx_bytes[date]]);
-      tx_bytes([c, json.data.tx_bytes[date]]);
+      rx_bytes.push([c, json.data.rx_bytes[date]]);
+      tx_bytes.push([c, json.data.tx_bytes[date]]);
       c++;
     }
 
