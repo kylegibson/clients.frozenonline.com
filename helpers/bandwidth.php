@@ -38,7 +38,6 @@ function get_current($period) {
 
 function get_xfer_metrics($system, $dates, $date_step) {
   $metrics = array("tx_bytes", "rx_bytes", "vnc-tx_bytes", "vnc-rx_bytes");
-  // $current = get_current($date_step);
   $conn = cassandra_connect(KS_METRICS);
   $agg = new ColumnFamily($conn, CF_AGG);
   $keys = array();
