@@ -33,6 +33,8 @@ $card = array(
 );
 $is_being_reset = isset($system_info["control"]) && $system_info["control"] == "reset";
 ?>
+<script src="/assets/js/jquery.flot-20110621.js" type="text/javascript"> </script>
+<script src="/assets/js/jquery.flot.orderBars.js" type="text/javascript"> </script>
 <script src="/assets/js/account_summary.js" type="text/javascript"> </script>
 <div class="box summary">
   <div class="inner">
