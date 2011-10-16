@@ -1,3 +1,19 @@
+var flot_hover_previous_point = null;
+
+function plot_hover_tooltip(fn) {
+  return function (evt, pos, item) {
+    if(item) {
+      if(flot_hover_previous_point != item.datapoint) {
+        flot_hover_previous_point = item.datapoint;
+        fn($("#plot_tooltip"), evt, pos, item);
+      }
+    } else {
+      $("#plot_tooltip").hide();
+      flot_hover_previous_point = null;
+    }
+  };
+}
+
 $(function() {
 
   $.getJSON('/json/xfer', function(json) {
@@ -74,6 +90,16 @@ $(function() {
     // bandwidth-usage-72-hours
     // bandwidth-usage-daily
     $.plot($('.bandwidth-usage-monthly'), pdata, popts);
+    $('.bandwidth-usage-monthly').bind('plothover', plot_hover_tooltip(
+      function(tooltip, evt, pos, item) {
+        tooltip.css({
+          left: pos.pageX+10,
+          top: pos.pageY+15
+        });
+        tooltip.text(item.series.label + ": " + item.datapoint[1]);
+        tooltip.show();
+      }
+    ));
   });
 
   var i_reboot = $(".reboot input[value=Reboot]");

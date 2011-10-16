@@ -28,19 +28,21 @@ $card = array(
   "VNC Host" => "vnc.".$system_info["provider"],
   "VNC Port" => $system_info["vncport_external"],
   "Contact email" => $sub_info["email"],
+  "Service Start" => $sub_info["start"],
   "Expiration" => $expiration,
   "Time Remaining" => $time_remaining,
 );
-$is_being_reset = isset($system_info["control"]) && $system_info["control"] == "reset";
+$reset_pending = isset($system_info["control"]) && $system_info["control"] == "reset";
 ?>
 <script src="/assets/js/jquery.flot-20110621.js" type="text/javascript"> </script>
 <script src="/assets/js/jquery.flot.orderBars.js" type="text/javascript"> </script>
 <script src="/assets/js/account_summary.js" type="text/javascript"> </script>
+<div id="plot_tooltip"></div>
 <div class="box summary">
   <div class="inner">
     <h2>Account Summary</h2>
     <div class="reboot right">
-<?if($is_being_reset):?>
+<?if($reset_pending):?>
       <div class="in-progress">Reboot is in progress</div>
 <?else:?>
       <input type="button" value="Reboot"/>

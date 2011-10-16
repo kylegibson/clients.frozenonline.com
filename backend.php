@@ -59,7 +59,12 @@ if($logged_in) {
   if($request == "xfer") {
     ob_start('ob_gzhandler');
     require_helper("bandwidth");
-    $monthly_dates = get_date_span(strtotime("2011-01"), time(), "monthly");
+    $start_of_year = strtotime(date("Y-01-01"));
+    $start = strtotime($sub_info["start"]);
+    if($start_of_year > $start) {
+      $start = $start_of_year;
+    }
+    $monthly_dates = get_date_span($start, time(), "monthly");
     $monthly = get_xfer_metrics($system, $monthly_dates, "monthly");
     echo json_encode(array("columns" => $monthly_dates, "data" => $monthly));
     exit;

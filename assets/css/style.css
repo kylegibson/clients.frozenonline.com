@@ -1,3 +1,18 @@
+#plot_tooltip {
+position: absolute;
+display: none;
+z-index: 1010;
+font-size: 12;
+font-family: verdana, sans-serif;
+background: silver none;
+border-radius:.5em;
+-moz-border-radius:.5em;
+-webkit-border-radius:.5em;
+border: 1px gray solid;
+padding: 0.2em 0.3em 0.2em 0.3em;
+opacity: 0.8;
+}
+
 .bandwidth-usage-monthly {
 width:40em;
 height:20em;
