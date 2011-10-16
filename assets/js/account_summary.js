@@ -3,6 +3,7 @@ $(function() {
   $.getJSON('/json/xfer', function(json) {
     var keys = {};
     var ticks = [];
+    var colors = ["#0F0", "#00F", "#006400", "#00008B"];
 
     for(var i in json.data) {
       keys[i] = [];
@@ -59,15 +60,14 @@ $(function() {
     popts.xaxis.max = c;
     popts.xaxis.ticks = ticks;
 
-    var colors = ["#0F0", "#00F", "#006400", "#00008B"];
     var pdata = [];
     var i = 1;
     for(var key in keys) {
       pdata.push({
         data: keys[key],
         bars: { order: i },
-        label: key,
-        color: colors[i]
+        label: key
+        // color: colors[i-1]
       });
       i++;
     }
