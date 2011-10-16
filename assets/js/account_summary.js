@@ -63,7 +63,7 @@ $(function() {
     for(var key in keys) {
       pdata.push({
         data: keys[key],
-        bars: i,
+        bars: { order: i },
         label: key,
         color: colors[i]
       });
