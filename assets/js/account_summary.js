@@ -28,7 +28,7 @@ $(function() {
       bars: {
         show: true, 
         lineWidth: 0,
-        barWidth: 0.3,
+        barWidth: 0.2,
         align: "left"
       },
       xaxis: { 
