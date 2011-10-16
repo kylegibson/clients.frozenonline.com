@@ -1,16 +1,20 @@
 $(function() {
 
   $.getJSON('/json/xfer', function(json) {
-    var rx_bytes = [];
-    var tx_bytes = [];
+    var keys = {};
     var ticks = [];
+
+    for(var i in json.data) {
+      keys[i] = [];
+    }
 
     var c = 1;
     for(var i in json.columns) {
       var date = json.columns[i];
       ticks.push([c, date]);
-      rx_bytes.push([c, json.data.rx_bytes[date]]);
-      tx_bytes.push([c, json.data.tx_bytes[date]]);
+      for(var key in keys) {
+        keys[key].push([c, json.data[key][date]]);
+      }
       c++;
     }
 
@@ -40,6 +44,7 @@ $(function() {
         clickable: true
       }
     };
+
     popts.yaxis.tickFormatter = function(val, axis) {
       if (val < 0) return "";
       if (val > 1000000)
@@ -52,17 +57,20 @@ $(function() {
     popts.xaxis.max = c;
     popts.xaxis.ticks = ticks;
 
-    var pdata = [{
-      data: rx_bytes,
-      bars: { order : 1 },
-      label: "rx_bytes",
-      color: "#0F0"
-    }, {
-      data: tx_bytes,
-      bars: { order : 2 },
-      label: "tx_bytes",
-      color: "#00F"
-    }];
+    var colors = ["#0F0", "#00F", "#006400", "#00008B"];
+    var pdata = [];
+    var i = 1;
+    for(var key in keys) {
+      pdata.push({
+        data: keys[key],
+        bars: i,
+        label: key,
+        color: colors[i]
+      });
+      i++;
+    }
+    // bandwidth-usage-72-hours
+    // bandwidth-usage-daily
     $.plot($('.bandwidth-usage-monthly'), pdata, popts);
   });
 
