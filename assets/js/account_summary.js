@@ -47,6 +47,8 @@ $(function() {
 
     popts.yaxis.tickFormatter = function(val, axis) {
       if (val < 0) return "";
+      if (val > 1000000000)
+        return (val / 1000000000).toFixed(axis.tickDecimals) + " GiB";
       if (val > 1000000)
         return (val / 1000000).toFixed(axis.tickDecimals) + " MiB";
       if (val > 1000)
