@@ -106,8 +106,9 @@ $(function() {
   var confirm_d = $(".reboot .are-you-sure");
   var in_progress = $(".reboot .in-progress");
   i_reboot.click(function() {
-    i_reboot.fadeOut();
-    confirm_d.fadeIn();
+    i_reboot.fadeOut(function() {
+      confirm_d.fadeIn();
+    });
   });
   $(".reboot input[value=No]").click(function() {
     confirm_d.fadeOut(function() {
@@ -115,10 +116,11 @@ $(function() {
     });
   });
   $(".reboot input[value=Yes]").click(function() {
-    confirm_d.fadeOut();
-    in_progress.fadeIn();
-    $.get('<?=$reboot_url?>', function(data) {
-      in_progress.text(data);
+    confirm_d.fadeOut(function() {
+      in_progress.fadeIn();
+      $.get('<?=$reboot_url?>', function(data) {
+        in_progress.text(data);
+      });
     });
   });
 });
