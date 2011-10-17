@@ -110,8 +110,9 @@ $(function() {
     confirm_d.fadeIn();
   });
   $(".reboot input[value=No]").click(function() {
-    confirm_d.fadeOut();
-    i_reboot.fadeIn();
+    confirm_d.fadeOut(function() {
+      i_reboot.fadeIn();
+    });
   });
   $(".reboot input[value=Yes]").click(function() {
     confirm_d.fadeOut();
