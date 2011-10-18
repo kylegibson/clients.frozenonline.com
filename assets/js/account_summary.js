@@ -98,7 +98,7 @@ $(function() {
   $.getJSON('/json/xfer', function(json) {
     init_chart(json.monthly, $('.bandwidth-usage-monthly'));
     init_chart(json.daily, $('.bandwidth-usage-daily'));
-    init_chart(json.hourly, $('.bandwidth-usage-72-hours'));
+    init_chart(json.hourly, $('.bandwidth-usage-hourly'));
   });
 
   var i_reboot = $(".reboot input[value=Reboot]");
