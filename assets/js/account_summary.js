@@ -16,10 +16,9 @@ function plot_hover_tooltip(fn) {
 
 $(function() {
 
-  $.getJSON('/json/xfer', function(json) {
+  var init_chart = function(target, json) {
     var keys = {};
     var ticks = [];
-    var colors = ["#0F0", "#00F", "#006400", "#00008B"];
 
     for(var i in json.data) {
       keys[i] = [];
@@ -83,14 +82,11 @@ $(function() {
         data: keys[key],
         bars: { order: i },
         label: key
-        // color: colors[i-1]
       });
       i++;
     }
-    // bandwidth-usage-72-hours
-    // bandwidth-usage-daily
-    $.plot($('.bandwidth-usage-monthly'), pdata, popts);
-    $('.bandwidth-usage-monthly').bind('plothover', plot_hover_tooltip(
+    $.plot(target, pdata, popts);
+    target.bind('plothover', plot_hover_tooltip(
       function(tooltip, evt, pos, item) {
         tooltip.css({
           left: pos.pageX+10,
@@ -100,6 +96,12 @@ $(function() {
         tooltip.show();
       }
     ));
+  };
+
+  $.getJSON('/json/xfer', function(json) {
+    init_chart(json.monthly, $('.bandwidth-usage-monthly'));
+    init_chart(json.daily, $('.bandwidth-usage-daily'));
+    init_chart(json.hourly, $('.bandwidth-usage-72-hours'));
   });
 
   var i_reboot = $(".reboot input[value=Reboot]");

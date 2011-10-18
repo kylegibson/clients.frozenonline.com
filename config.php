@@ -1,6 +1,15 @@
 <?
-function require_helper($helper) {
-  require_once(ROOT."/helpers/".$helper.".php");
+function require_helper($name) {
+  require_once(ROOT."/helpers/".$name.".php");
+}
+function require_controller($name) {
+  require_once(ROOT."/controllers/".$name.".php");
+  $func = "{$name}_init";
+  if(function_exists($func)) {
+    if(!$func()) {
+      exit;
+    }
+  }
 }
 
 $logged_in = false;

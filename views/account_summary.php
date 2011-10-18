@@ -3,6 +3,8 @@ if(!(isset($page) && isset($_SESSION["system"]) && isset($_SESSION["passwd"]))) 
   header("Location: /");
   exit;
 }
+require_helper("parse_expire");
+
 $system = $_SESSION["system"];
 $passwd = $_SESSION["passwd"];
 

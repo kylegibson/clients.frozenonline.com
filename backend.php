@@ -59,20 +59,36 @@ if($logged_in) {
   if($request == "xfer") {
     ob_start('ob_gzhandler');
     require_helper("bandwidth");
-    $start_of_year = strtotime(date("Y-01-01"));
     $start = strtotime($sub_info["start"]);
-    if($start_of_year > $start) {
-      $start = $start_of_year;
+    $monthly_start = $start_of_year = strtotime(date("Y-01-01"));
+    $daily_start = $_30_days_ago = strtotime("30 days ago"):
+    $hourly_start = $_72_days_ago = strtotime("72 hours ago");
+    if($start > $monthly_start) {
+      $monthly_start = $start;
     }
-    $monthly_dates = get_date_span($start, time(), "monthly");
+    if($start > $_30_days_ago) {
+      $daily_start = $start;
+    }
+    if($start > $_72_days_ago) {
+      $hourly_start = $start;
+    }
+    $monthly_dates = get_date_span($monthly_start, time(), "monthly");
     $monthly = get_xfer_metrics($system, $monthly_dates, "monthly");
-    echo json_encode(array("columns" => $monthly_dates, "data" => $monthly));
+    $daily_dates = get_date_span($daily_start, time(), "daily");
+    $daily = get_xfer_metrics($system, $daily_dates, "daily");
+    $hourly_dates = get_date_span($hourly_start, time(), "hourly");
+    $hourly = get_xfer_metrics($system, $hourly_dates, "hourly");
+      $out = array(
+      "monthly" = array("column" => $monthly_dates, "data" => $monthly),
+      "daily" = array("column" => $hourly_dates, "data" => $daily),
+      "hourly" = array("column" => $daily_dates, "data" => $hourly),
+    );
+    echo json_encode($out);
     exit;
   }
   $menu[] = "Summary:/f/summary";
   $menu[] = "Logout:/f/logout";
   $page = isset($pages[$request]) ? $pages[$request] : $pages["summary"];
   $title = isset($titles[$request]) ? $titles[$request] : $titles["summary"];
-  require_helper("parse_expire");
 }
 ?>
