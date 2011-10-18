@@ -78,10 +78,10 @@ if($logged_in) {
     $daily = get_xfer_metrics($system, $daily_dates, "daily");
     $hourly_dates = get_date_span($hourly_start, time(), "hourly");
     $hourly = get_xfer_metrics($system, $hourly_dates, "hourly");
-      $out = array(
-      "monthly" = array("column" => $monthly_dates, "data" => $monthly),
-      "daily" = array("column" => $hourly_dates, "data" => $daily),
-      "hourly" = array("column" => $daily_dates, "data" => $hourly),
+    $out = array(
+      "monthly" => array("column" => $monthly_dates, "data" => $monthly),
+      "daily" => array("column" => $hourly_dates, "data" => $daily),
+      "hourly" => array("column" => $daily_dates, "data" => $hourly),
     );
     echo json_encode($out);
     exit;
