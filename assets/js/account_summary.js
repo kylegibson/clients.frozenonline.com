@@ -30,12 +30,12 @@ $(function() {
   var init_chart = function(json, dst) {
     var keys = {};
     var ticks = [];
+    var c = 1;
 
     for(var i in json.data) {
       keys[i] = [];
     }
 
-    var c = 1;
     for(var i in json.columns) {
       var date = json.columns[i];
       ticks.push([c, date]);
