@@ -34,7 +34,7 @@ $(function() {
     var day = "";
     var skip = 1;
     if(dates.length > 30) {
-      skip = dates.length/20;
+      skip = Math.ceil(dates.length/20);
     }
     for(var i = 0; i < dates.length; i += skip) {
       var date = dates[i];
