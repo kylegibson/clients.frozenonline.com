@@ -36,7 +36,7 @@ $(function() {
     if(dates.length > 30) {
       skip = dates.length/20;
     }
-    for(var i = 0; i < dates.length; i += skip);
+    for(var i = 0; i < dates.length; i += skip) {
       var date = dates[i];
       var sdate = date.replace(/\./, "-").split("-");
       var fdate = [];
