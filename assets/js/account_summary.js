@@ -16,7 +16,7 @@ function plot_hover_tooltip(fn) {
 
 $(function() {
 
-  var init_chart = function(target, json) {
+  var init_chart = function(dst, json) {
     var keys = {};
     var ticks = [];
 
@@ -85,8 +85,8 @@ $(function() {
       });
       i++;
     }
-    $.plot(target, pdata, popts);
-    target.bind('plothover', plot_hover_tooltip(
+    $.plot(dst, pdata, popts);
+    dst.bind('plothover', plot_hover_tooltip(
       function(tooltip, evt, pos, item) {
         tooltip.css({
           left: pos.pageX+10,
