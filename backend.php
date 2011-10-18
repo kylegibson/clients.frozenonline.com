@@ -62,7 +62,7 @@ if($logged_in) {
     $start = strtotime($sub_info["start"]);
     $monthly_start = $start_of_year = strtotime(date("Y-01-01"));
     $daily_start = $days_ago = strtotime("30 days ago");
-    $hourly_start = $hours_ago = strtotime("72 hours ago");
+    $hourly_start = $hours_ago = strtotime("24 hours ago");
     if($start > $monthly_start) {
       $monthly_start = $start;
     }
