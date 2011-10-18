@@ -37,7 +37,7 @@ $(function() {
       var sdate = date.replace(/\./, "-").split("-");
       var fdate = [];
       if(sdate.length == 4) { // hour
-        fdate.push(sdate[3]+":00");
+        fdate.push(sdate[3]);
       }
       if(sdate.length >= 3) { // day
         if(day != sdate[2]) {
