@@ -38,7 +38,7 @@ $(function() {
 
     for(var i in json.columns) {
       var date = json.columns[i];
-      var date_vert = date.replace(/-/, "<br>");
+      var date_vert = date.replace(/-|\./g, "<br>");
       // for(var c in date) {
       //   date_vert += date[c] + "<br>";
       // }
