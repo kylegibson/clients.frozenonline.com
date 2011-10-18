@@ -42,6 +42,7 @@ if($system != null && $passwd != null) {
     }
   } catch (Exception $e) { }
 }
+
 if($logged_in) {
   if($request == "reboot") { // Ajax callback
     if($system_info["flag_allow_web_reset"] == 0) {
