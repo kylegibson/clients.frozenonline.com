@@ -62,8 +62,11 @@ $reset_pending = isset($system_info["control"]) && $system_info["control"] == "r
     <dl><dt><?=$dt?></dt><dd><?=$dd?></dd></dl>
     <? endforeach;?>
     <h2>Bandwidth Usage</h2>
+    <h3>Hourly</h3>
     <div class="bandwidth-usage-hourly"></div>
+    <h3>Daily</h3>
     <div class="bandwidth-usage-daily"></div>
+    <h3>Monthly</h3>
     <div class="bandwidth-usage-monthly"></div>
   </div>
 </div>
