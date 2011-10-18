@@ -16,7 +16,18 @@ function plot_hover_tooltip(fn) {
 
 $(function() {
 
-  var init_chart = function(dst, json) {
+  var tick_formatter = function(val, axis) {
+    if (val < 0) return "";
+    if (val > 1000000000)
+      return (val / 1000000000).toFixed(axis.tickDecimals) + " GiB";
+    if (val > 1000000)
+      return (val / 1000000).toFixed(axis.tickDecimals) + " MiB";
+    if (val > 1000)
+      return (val / 1000).toFixed(axis.tickDecimals) + " KiB";
+    return val.toFixed(axis.tickDecimals) + " B";
+  };
+
+  var init_chart = function(json, dst) {
     var keys = {};
     var ticks = [];
 
@@ -49,31 +60,17 @@ $(function() {
       },
       xaxis: { 
         min: 0.25,
-        max: null,
-        ticks: null
+        max: c,
+        ticks: ticks
       },
       yaxis: {
-        tickFormatter: null
+        tickFormatter: tick_formatter
       },
       grid: {
         hoverable: true,
         clickable: true
       }
     };
-
-    popts.yaxis.tickFormatter = function(val, axis) {
-      if (val < 0) return "";
-      if (val > 1000000000)
-        return (val / 1000000000).toFixed(axis.tickDecimals) + " GiB";
-      if (val > 1000000)
-        return (val / 1000000).toFixed(axis.tickDecimals) + " MiB";
-      if (val > 1000)
-        return (val / 1000).toFixed(axis.tickDecimals) + " KiB";
-      return val.toFixed(axis.tickDecimals) + " B";
-    };
-
-    popts.xaxis.max = c;
-    popts.xaxis.ticks = ticks;
 
     var pdata = [];
     var i = 1;
