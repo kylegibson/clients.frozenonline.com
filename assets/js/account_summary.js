@@ -33,13 +33,18 @@ $(function() {
     var month = "";
     var day = "";
     var skip = 1;
-    // if(dates.length > 30) {
-    //   skip = Math.ceil(dates.length/20);
-    // }
-    for(var i = 0; i < dates.length; i += skip) {
+    if(dates.length > 30) {
+      skip = Math.ceil(dates.length/30);
+    }
+    for(var i in dates) {
+      if((i%skip)!=0) {
+        fdates.push("");
+        continue;
+      }
+
       var date = dates[i];
-      var sdate = date.replace(/\./, "-").split("-");
       var fdate = [];
+      var sdate = date.replace(/\./, "-").split("-");
       if(sdate.length == 4) { // hour
         fdate.push(sdate[3]);
       }
