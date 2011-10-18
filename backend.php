@@ -61,15 +61,15 @@ if($logged_in) {
     require_helper("bandwidth");
     $start = strtotime($sub_info["start"]);
     $monthly_start = $start_of_year = strtotime(date("Y-01-01"));
-    $daily_start = $_30_days_ago = strtotime("20 days ago");
-    $hourly_start = $_72_days_ago = strtotime("20 hours ago");
+    $daily_start = $days_ago = strtotime("30 days ago");
+    $hourly_start = $hours_ago = strtotime("72 hours ago");
     if($start > $monthly_start) {
       $monthly_start = $start;
     }
-    if($start > $_30_days_ago) {
+    if($start > $days_ago) {
       $daily_start = $start;
     }
-    if($start > $_72_days_ago) {
+    if($start > $hours_ago) {
       $hourly_start = $start;
     }
     $monthly_dates = get_date_span($monthly_start, time(), "monthly");
