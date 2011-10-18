@@ -38,10 +38,10 @@ $(function() {
 
     for(var i in json.columns) {
       var date = json.columns[i];
-      var date_vert = "";
-      for(var c in date) {
-        date_vert += date[c] + "<br>";
-      }
+      var date_vert = date.replace(/-/, "<br>");
+      // for(var c in date) {
+      //   date_vert += date[c] + "<br>";
+      // }
       ticks.push([c, date_vert]);
       for(var key in keys) {
         keys[key].push([c, json.data[key][date]]);
