@@ -37,13 +37,19 @@ $(function() {
       var sdate = date.replace(/\./, "-").split("-");
       var fdate = [];
       if(sdate.length == 4) { // hour
-        fdate.push(sdate[3]);
+        fdate.push(sdate[3]+":00");
       }
       if(sdate.length >= 3) { // day
-        fdate.push(sdate[2]);
+        if(day != sdate[2]) {
+          fdate.push(sdate[2]);
+          day = sdate[2];
+        }
       }
       if(sdate.length >= 2) { // year, month
-        fdate.push(sdate[1]);
+        if(month != sdate[1]) {
+          fdate.push(sdate[1]);
+          month = sdate[1];
+        }
         if(year != sdate[0]) {
           fdate.push(sdate[0]);
           year = sdate[0];
