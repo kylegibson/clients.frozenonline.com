@@ -40,7 +40,7 @@ $(function() {
       var date = json.columns[i];
       var date_vert = "";
       for(var c in date) {
-        date_vert += c + "<br>";
+        date_vert += date[c] + "<br>";
       }
       ticks.push([c, date_vert]);
       for(var key in keys) {
