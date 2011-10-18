@@ -27,6 +27,33 @@ $(function() {
     return val.toFixed(axis.tickDecimals) + " B";
   };
 
+  var format_date_labels = function(dates) {
+    var fdates = [];
+    var year = "";
+    var month = "";
+    var day = "";
+    for(var i in dates) {
+      var date = dates[i];
+      var sdate = date.replace(/\./, "-").split("-");
+      var fdate = [];
+      if(sdate.length <= 4) { // hour
+        fdate.push(sdate[3]);
+      }
+      if(sdate.length >= 3) { // day
+        fdate.push(sdate[2]);
+      }
+      if(sdate.length >= 2) { // year, month
+        fdate.push(sdate[1]);
+        if(year != sdate[0]) {
+          fdate.push(sdate[0]);
+          year = sdate[0];
+        }
+      }
+      fdates.push(fdate.join("<br>"));
+    }
+    return fdates;
+  }
+
   var init_chart = function(json, dst) {
     var keys = {};
     var ticks = [];
@@ -36,13 +63,11 @@ $(function() {
       keys[i] = [];
     }
 
+    var fdates = format_date_labels(json.columns);
+
     for(var i in json.columns) {
       var date = json.columns[i];
-      var date_vert = date.replace(/-|\./g, "<br>");
-      // for(var c in date) {
-      //   date_vert += date[c] + "<br>";
-      // }
-      ticks.push([c, date_vert]);
+      ticks.push([c, fdates[i]]);
       for(var key in keys) {
         keys[key].push([c, json.data[key][date]]);
       }
