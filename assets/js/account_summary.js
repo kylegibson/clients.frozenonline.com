@@ -72,13 +72,15 @@ $(function() {
       }
     };
 
+    var colors = ["#F00", "#0F0", "#00F", "#000"];
     var pdata = [];
     var i = 1;
     for(var key in keys) {
       pdata.push({
         data: keys[key],
         bars: { order: i },
-        label: key
+        label: key,
+        color: colors[i-1]
       });
       i++;
     }
