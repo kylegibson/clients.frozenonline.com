@@ -1,5 +1,5 @@
 <?
-if(!isset($helper)) exit;
+if(!isset($name)) exit;
 function logout() {
   $_SESSION = array();
   if (ini_get("session.use_cookies")) {
