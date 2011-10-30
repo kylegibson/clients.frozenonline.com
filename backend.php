@@ -12,7 +12,6 @@ if($request == "logout") {
 
 $page = $pages["login"];
 $title = $titles["login"];
-
 $system = $passwd = null;
 
 if(isset($_SESSION[$k_system]) && isset($_SESSION[$k_passwd])) {
