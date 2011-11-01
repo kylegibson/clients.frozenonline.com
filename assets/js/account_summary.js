@@ -163,7 +163,7 @@ $(function() {
   $(".reboot input[value=Yes]").click(function() {
     confirm_d.fadeOut(function() {
       in_progress.fadeIn();
-      $.get('<?=$reboot_url?>', function(data) {
+      $.get('/f/reboot', function(data) {
         in_progress.text(data);
       });
     });
